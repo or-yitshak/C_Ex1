@@ -2,23 +2,19 @@
 # include "NumClass.h"
 # define True 1
 
-int swap(int, int);
-
-int swap(int a, int b) // for a > b case
-{
-    int temp = a;
-    a = b;
-    b = temp;
-    return 0;
-}
-
 int main()
 {
-    int first, second, i;
+    int first, second, i; // our scale of numbers
     scanf("%d %d", &first, &second);
+    if (first < 0 || second < 0)
+    {
+        return 1; // because the numbers must be positive
+    }
     if (first > second)
     {
-        swap(first, second);
+        int temp = first;
+        first = second;
+        second = temp;
     }
     printf("The Armstrong numbers are:");
     for (i = first; i < second+1; i++)
